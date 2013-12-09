@@ -1,0 +1,45 @@
+﻿//
+//  EGORefreshTableController.h
+//  VenusIphone
+//
+//  Created by  on 12-3-31.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+//
+
+#import <Foundation/Foundation.h>
+#import "EGORefreshTableHeaderView.h"
+
+typedef enum{
+	EGOPullTypeDown = 0,
+	EGOPullTypeUp = 1,
+    EGOPullTypeBoth = 2
+} EGOPullType;
+
+@class EGORefreshTableController;
+
+@protocol EGORefreshTableControllerDelegate
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableController*)controller type:(EGOPullType)type;
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableController*)controller type:(EGOPullType)type;
+/*
+@optional
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableController*)view type:(EGOPullType)type;
+*/
+@end
+
+
+
+@interface EGORefreshTableController : NSObject<EGORefreshTableHeaderDelegate>
+
+@property(retain, nonatomic) EGORefreshTableHeaderView *dragDownView;
+@property(retain, nonatomic) EGORefreshTableHeaderView *dragUpView;
+@property(assign, nonatomic) id<EGORefreshTableControllerDelegate> delegate;
+@property(retain, nonatomic) UITableView* mainTableView;
+
+- (id)initWithTableView:(UITableView*)tableView type:(EGOPullType)type;
+- (void)setState:(EGOPullRefreshState) aState;
+- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
+- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+
+@end

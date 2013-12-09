@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes
+END
+ASIHTTPRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIHTTPRequest.m
+END
+ASICacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASICacheDelegate.h
+END
+ASINetworkQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASINetworkQueue.h
+END
+ASIDataDecompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDataDecompressor.h
+END
+ASIAuthenticationDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIAuthenticationDialog.h
+END
+ASIProgressDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIProgressDelegate.h
+END
+ASIDownloadCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDownloadCache.m
+END
+ASINetworkQueue.m
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASINetworkQueue.m
+END
+ASIDataDecompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDataDecompressor.m
+END
+ASIAuthenticationDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIAuthenticationDialog.m
+END
+ASIFormDataRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIFormDataRequest.h
+END
+ASIInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIInputStream.h
+END
+ASIFormDataRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIFormDataRequest.m
+END
+ASIHTTPRequestConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIHTTPRequestConfig.h
+END
+ASIInputStream.m
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIInputStream.m
+END
+ASIHTTPRequestDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIHTTPRequestDelegate.h
+END
+ASIDataCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDataCompressor.h
+END
+ASIHTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIHTTPRequest.h
+END
+ASIDownloadCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDownloadCache.h
+END
+ASIDataCompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/venus/!svn/ver/28/trunk/03code/client/iphone/VenusIphone/VenusIphone/ThirdLibs/AsiHttpRequest/Classes/ASIDataCompressor.m
+END

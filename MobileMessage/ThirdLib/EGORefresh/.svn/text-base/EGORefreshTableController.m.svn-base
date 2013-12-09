@@ -1,0 +1,123 @@
+//
+//  EGORefreshTableController.m
+//  VenusIphone
+//
+//  Created by  on 12-3-31.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "EGORefreshTableController.h"
+
+
+@interface EGORefreshTableController(Private)
+- (void)updatePullViewFrame;
+@end
+
+@implementation EGORefreshTableController
+
+@synthesize dragDownView;
+@synthesize dragUpView;
+@synthesize delegate;
+@synthesize mainTableView;
+
+- (void)setState:(EGOPullRefreshState) aState
+{
+    [dragDownView setState:aState];
+}
+
+- (id)initWithTableView:(UITableView*)tableView type:(EGOPullType)type {
+    if (self = [super init]) {
+        if (type == EGOPullTypeBoth || type == EGOPullTypeDown) {
+            EGORefreshTableHeaderView* view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, -65.0f, tableView.frame.size.width, 65.0f)];
+          
+            view.delegate = self;
+            [tableView addSubview:view];
+            self.dragDownView = view;
+            [view release];
+        }
+        if (type == EGOPullTypeBoth || type == EGOPullTypeUp) {
+            CGFloat width = tableView.frame.size.width;
+            CGFloat originY = tableView.contentSize.height;
+            CGFloat originX = tableView.contentOffset.x;    
+            if (originY < tableView.frame.size.height)
+                originY = tableView.frame.size.height;  
+            EGORefreshTableHeaderView* view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(originX, originY, width, 65.0f) arrowImageName:@"refresh.png" textColor:[UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0] ddown:NO];
+;
+            view.delegate = self;
+            [tableView addSubview:view];
+            self.dragUpView = view;
+            [view release];            
+        }
+        self.mainTableView = tableView;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    delegate = nil;
+    mainTableView.delegate = nil;
+    mainTableView.dataSource = nil;
+    [mainTableView release];
+    [dragDownView release];
+    [dragUpView release];
+    [super dealloc];
+}
+
+- (void)updatePullViewFrame {
+    if (dragUpView != nil) {        
+        CGFloat width = mainTableView.frame.size.width;        
+        CGFloat originY = mainTableView.contentSize.height;        
+        CGFloat originX = mainTableView.contentOffset.x;        
+        if (originY < mainTableView.frame.size.height) {            
+            originY = mainTableView.frame.size.height;            
+        }
+        if (!CGRectEqualToRect(dragUpView.frame, CGRectMake(originX, originY, width, dragUpView.frame.size.height))) {
+            dragUpView.frame = CGRectMake(originX, originY, width,  dragUpView.frame.size.height);  
+        }
+    }
+    
+}
+
+- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.dragDownView)
+        [self.dragDownView egoRefreshScrollViewDidScroll:scrollView];
+    if (self.dragUpView)
+        [self.dragUpView egoRefreshScrollViewDidScroll:scrollView];
+}
+- (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
+    if (self.dragDownView)
+        [self.dragDownView egoRefreshScrollViewDidEndDragging:scrollView];
+    if (self.dragUpView)
+        [self.dragUpView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+}
+- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {
+    if (self.dragDownView)
+        [self.dragDownView egoRefreshScrollViewDataSourceDidFinishedLoading:scrollView];
+    if (self.dragUpView) {
+        [self.dragUpView egoRefreshScrollViewDataSourceDidFinishedLoading:scrollView];
+        [self updatePullViewFrame];
+    }
+}
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view {
+    NSInteger type = (view == self.dragDownView) ? EGOPullTypeDown : EGOPullTypeUp;
+    return [delegate egoRefreshTableHeaderDidTriggerRefresh:self type:type];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view {
+    NSInteger type = (view == self.dragDownView) ? EGOPullTypeDown : EGOPullTypeUp;
+    return [delegate egoRefreshTableHeaderDataSourceIsLoading:self type:type];
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view {
+    /*
+    NSInteger type = (view == self.dragDownView) ? EGOPullTypeDown : EGOPullTypeUp;
+    if ([(NSObject*)delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:type:)])
+        return [delegate egoRefreshTableHeaderDataSourceLastUpdated:self type:type];
+    */
+    return [NSDate date]; // should return date data source was last changed    
+}
+@end
+
+
